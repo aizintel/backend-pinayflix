@@ -1,6 +1,6 @@
-import { Request, Response } from 'express';
-import cheerio from 'cheerio';
-import axios from 'axios';
+const { Request, Response } = require('express');
+const cheerio = require('cheerio');
+const axios = require('axios');
 
 interface PageData {
   title: string;
@@ -9,7 +9,7 @@ interface PageData {
   video: string;
 }
 
-export const search = async (req: Request, res: Response): Promise<void> => {
+export const search = async (req?: Request, res?: Response): Promise<void> => {
   try {
     const query = req.query.q as string; 
     const searchUrl = `https://example.com/search?q=${query}`;
