@@ -1,20 +1,47 @@
 import { Request, Response } from 'express';
 import cheerio from 'cheerio';
+import axios from 'axios';
 
-export const search = (req: Request, res: Response): void => {
-
+interface PageData {
+  title: string;
+  img: string;
+  link: string;
+  video: string;
 }
 
-export const pages = asserts(req: Request, res: Response): void => {
+export const search = async (req: Request, res: Response): Promise<void> => {
   try {
+    const query = req.query.q as string; 
+    const searchUrl = `https://example.com/search?q=${query}`;
+    const axiosResponse = await axios.get(searchUrl);
+    const $ = cheerio.load(axiosResponse.data);
 
+    const results: PageData[] = [];
+    $('.search-result').each((i, element) => {
+      const title = $(element).find('.title').text();
+      const img = $(element).find('img').attr('src') || '';
+      const link = $(element).find('a').attr('href') || '';
+      const video = $(element).find('.video-url').attr('href') || '';
+
+      results.push({ title, img, link, video });
+    });
+
+    res.json(results); 
+  } catch (error) {
+    console.error(error);
+    res.status(500).send({ error: 'An error occurred while searching' });
+  }
+}
+export const pages = async (req: Request, res: Response): Promise<void> => {
+  try {
+    const page = req.query.page ? parseInt(req.query.page as string, 10) : 1;
     const url = `https://pinayflix.me/page/${page}`;
-    const res = await axios.get(url);
-    const $ = cheerio.load(res.data);
 
-    const data = [];
+    const axiosResponse = await axios.get(url);
+    const $ = cheerio.load(axiosResponse.data);
 
-    const promises = [];
+    const data: PageData[] = [];
+    const promises: Promise<void>[] = [];
 
     $('#primary').find('a').each((i, element) => {
       const val = $(element).attr('href');
@@ -37,9 +64,10 @@ export const pages = asserts(req: Request, res: Response): void => {
     });
 
     await Promise.all(promises);
-    return data;
+
+    res.json(data);
   } catch (error) {
     console.error(error);
-    throw error;
+    res.status(500).send({ error: 'An error occurred' });
   }
 }
