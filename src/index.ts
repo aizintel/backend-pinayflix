@@ -1,7 +1,6 @@
 
 import express from 'express';
-import homeRouter from './routes/home.route.ts';
-
+import homeRoutes from './routes/home.route.js';
 
 const app = express();
 
@@ -10,7 +9,6 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use('/api/home', homeRoutes);
 
-
-app.listen(3000, () => {
+app.listen(3000, '0.0.0.0', () => {
   console.log('Server is running on port 3000');
 });
