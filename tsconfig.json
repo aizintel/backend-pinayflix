@@ -1,11 +1,17 @@
 {
   "compilerOptions": {
-    "target": "ES2020",
-    "module": "CommonJS",
-    "outDir": "./dist",
-    "rootDir": "./src",
-    "strict": true,
-    "esModuleInterop": true,
-    "skipLibCheck": true
-  }
+    "module": "ESNext",                    // Ensures ESM output
+    "target": "ESNext",                    // Supports the latest ECMAScript features
+    "moduleResolution": "node",            // Resolves modules like Node.js
+    "esModuleInterop": true,               // Ensures compatibility with CommonJS modules
+    "skipLibCheck": true,                  // Skips type-checking of declaration files for faster builds
+    "strict": true,                        // Enables strict type-checking options
+    "outDir": "./dist",                    // Output directory for compiled files
+    "rootDir": "./src",                    // Root directory for source files
+    "allowJs": true,                       // Allows JavaScript files to be imported
+    "resolveJsonModule": true,             // Allows importing of JSON files as modules
+    "declaration": true                    // Generates .d.ts declaration files (optional)
+  },
+  "include": ["src/**/*"],                 // Include all files in the src folder
+  "exclude": ["node_modules"]              // Exclude node_modules folder
 }
