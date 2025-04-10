@@ -1,0 +1,6 @@
+{
+  "exec": "ts-node-dev --loader ts-node/esm --respawn src/index.ts",
+  "watch": ["src"],
+  "ext": "ts,tsx",
+  "ignore": ["node_modules"]
+}

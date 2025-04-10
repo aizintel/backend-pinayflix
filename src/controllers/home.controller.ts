@@ -1,6 +1,6 @@
-const { Request, Response } = require('express');
-const cheerio = require('cheerio');
-const axios = require('axios');
+import { Request, Response } from 'express';
+import cheerio from 'cheerio';
+import axios from 'axios';
 
 interface PageData {
   title: string;
