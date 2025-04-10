@@ -5,7 +5,7 @@ export const search = (req: Request, res: Response): void => {
 
 }
 
-export const pages = (req: Request, res: Response): void => {
+export const pages = asserts(req: Request, res: Response): void => {
   try {
 
     const url = `https://pinayflix.me/page/${page}`;
