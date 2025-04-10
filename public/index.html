@@ -1,0 +1,467 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+      integrity="sha512-n4j+JdzJUzdrJVgfygtFUGT6pPl64Zxw/odaa0/wE1fyEBswXTJMZVFV6eI0TLPJIHdKeIaAD3Z65slheVx48g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <title>Pinay Flix</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        background: white;
+        color: #333;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+
+      .loader {
+        --w: 10ch;
+        font-weight: bold;
+        font-family: monospace;
+        font-size: 30px;
+        letter-spacing: var(--w);
+        width: var(--w);
+        overflow: hidden;
+        white-space: nowrap;
+        color: #0000;
+        animation: l40 2s infinite;
+      }
+      .loader:before {
+        content: "P I N A Y...";
+      }
+
+      @keyframes l40 {
+        0%,
+        100% {
+          text-shadow:
+            calc(0 * var(--w)) 0 #000,
+            calc(-1 * var(--w)) 0 #000,
+            calc(-2 * var(--w)) 0 #000,
+            calc(-3 * var(--w)) 0 #000,
+            calc(-4 * var(--w)) 0 #000,
+            calc(-5 * var(--w)) 0 #000,
+            calc(-6 * var(--w)) 0 #000,
+            calc(-7 * var(--w)) 0 #000,
+            calc(-8 * var(--w)) 0 #000,
+            calc(-9 * var(--w)) 0 #000;
+        }
+        9% {
+          text-shadow:
+            calc(0 * var(--w)) 0 #000,
+            calc(-1 * var(--w)) 0 #000,
+            calc(-2 * var(--w)) -20px #0000,
+            calc(-3 * var(--w)) 0 #000,
+            calc(-4 * var(--w)) 0 #000,
+            calc(-5 * var(--w)) 0 #000,
+            calc(-6 * var(--w)) 0 #000,
+            calc(-7 * var(--w)) 0 #000,
+            calc(-8 * var(--w)) 0 #000,
+            calc(-9 * var(--w)) 0 #000;
+        }
+        18% {
+          text-shadow:
+            calc(0 * var(--w)) 0 #000,
+            calc(-1 * var(--w)) 0 #000,
+            calc(-2 * var(--w)) -20px #0000,
+            calc(-3 * var(--w)) 0 #000,
+            calc(-4 * var(--w)) 0 #000,
+            calc(-5 * var(--w)) 0 #000,
+            calc(-6 * var(--w)) -20px #0000,
+            calc(-7 * var(--w)) 0 #000,
+            calc(-8 * var(--w)) 0 #000,
+            calc(-9 * var(--w)) 0 #000;
+        }
+        27% {
+          text-shadow:
+            calc(0 * var(--w)) -20px #0000,
+            calc(-1 * var(--w)) 0 #000,
+            calc(-2 * var(--w)) -20px #0000,
+            calc(-3 * var(--w)) 0 #000,
+            calc(-4 * var(--w)) 0 #000,
+            calc(-5 * var(--w)) 0 #000,
+            calc(-6 * var(--w)) -20px #0000,
+            calc(-7 * var(--w)) 0 #000,
+            calc(-8 * var(--w)) 0 #000,
+            calc(-9 * var(--w)) 0 #000;
+        }
+        36% {
+          text-shadow:
+            calc(0 * var(--w)) -20px #0000,
+            calc(-1 * var(--w)) 0 #000,
+            calc(-2 * var(--w)) -20px #0000,
+            calc(-3 * var(--w)) 0 #000,
+            calc(-4 * var(--w)) 0 #000,
+            calc(-5 * var(--w)) -20px #0000,
+            calc(-6 * var(--w)) -20px #0000,
+            calc(-7 * var(--w)) 0 #000,
+            calc(-8 * var(--w)) 0 #000,
+            calc(-9 * var(--w)) 0 #000;
+        }
+        45% {
+          text-shadow:
+            calc(0 * var(--w)) -20px #0000,
+            calc(-1 * var(--w)) 0 #000,
+            calc(-2 * var(--w)) -20px #0000,
+            calc(-3 * var(--w)) 0 #000,
+            calc(-4 * var(--w)) 0 #000,
+            calc(-5 * var(--w)) -20px #0000,
+            calc(-6 * var(--w)) -20px #0000,
+            calc(-7 * var(--w)) 0 #000,
+            calc(-8 * var(--w)) -20px #0000,
+            calc(-9 * var(--w)) 0 #000;
+        }
+        54% {
+          text-shadow:
+            calc(0 * var(--w)) -20px #0000,
+            calc(-1 * var(--w)) 0 #000,
+            calc(-2 * var(--w)) -20px #0000,
+            calc(-3 * var(--w)) 0 #000,
+            calc(-4 * var(--w)) -20px #0000,
+            calc(-5 * var(--w)) -20px #0000,
+            calc(-6 * var(--w)) -20px #0000,
+            calc(-7 * var(--w)) 0 #000,
+            calc(-8 * var(--w)) -20px #0000,
+            calc(-9 * var(--w)) 0 #000;
+        }
+        63% {
+          text-shadow:
+            calc(0 * var(--w)) -20px #0000,
+            calc(-1 * var(--w)) 0 #000,
+            calc(-2 * var(--w)) -20px #0000,
+            calc(-3 * var(--w)) 0 #000,
+            calc(-4 * var(--w)) -20px #0000,
+            calc(-5 * var(--w)) -20px #0000,
+            calc(-6 * var(--w)) -20px #0000,
+            calc(-7 * var(--w)) 0 #000,
+            calc(-8 * var(--w)) -20px #0000,
+            calc(-9 * var(--w)) -20px #0000;
+        }
+        72% {
+          text-shadow:
+            calc(0 * var(--w)) -20px #0000,
+            calc(-1 * var(--w)) -20px #0000,
+            calc(-2 * var(--w)) -20px #0000,
+            calc(-3 * var(--w)) 0 #000,
+            calc(-4 * var(--w)) -20px #0000,
+            calc(-5 * var(--w)) -20px #0000,
+            calc(-6 * var(--w)) -20px #0000,
+            calc(-7 * var(--w)) 0 #000,
+            calc(-8 * var(--w)) -20px #0000,
+            calc(-9 * var(--w)) -20px #0000;
+        }
+        81% {
+          text-shadow:
+            calc(0 * var(--w)) -20px #0000,
+            calc(-1 * var(--w)) -20px #0000,
+            calc(-2 * var(--w)) -20px #0000,
+            calc(-3 * var(--w)) 0 #000,
+            calc(-4 * var(--w)) -20px #0000,
+            calc(-5 * var(--w)) -20px #0000,
+            calc(-6 * var(--w)) -20px #0000,
+            calc(-7 * var(--w)) -20px #0000,
+            calc(-8 * var(--w)) -20px #0000,
+            calc(-9 * var(--w)) -20px #0000;
+        }
+        90% {
+          text-shadow:
+            calc(0 * var(--w)) -20px #0000,
+            calc(-1 * var(--w)) -20px #0000,
+            calc(-2 * var(--w)) -20px #0000,
+            calc(-3 * var(--w)) -20px #0000,
+            calc(-4 * var(--w)) -20px #0000,
+            calc(-5 * var(--w)) -20px #0000,
+            calc(-6 * var(--w)) -20px #0000,
+            calc(-7 * var(--w)) -20px #0000,
+            calc(-8 * var(--w)) -20px #0000,
+            calc(-9 * var(--w)) -20px #0000;
+        }
+      }
+
+      nav {
+        color: #fff;
+        background: #bc0e0d;
+        padding: 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .gg-search {
+        box-sizing: border-box;
+        position: relative;
+        display: block;
+        transform: scale(var(--ggs, 1));
+        width: 16px;
+        height: 16px;
+        border: 2px solid;
+        border-radius: 100%;
+        margin-left: -4px;
+        margin-top: -4px;
+        cursor: pointer;
+      }
+
+      .gg-search::after {
+        content: "";
+        display: block;
+        box-sizing: border-box;
+        position: absolute;
+        border-radius: 3px;
+        width: 2px;
+        height: 8px;
+        background: currentColor;
+        transform: rotate(-45deg);
+        top: 10px;
+        left: 12px;
+      }
+
+       .gg-details-less {
+       box-sizing: border-box;
+       position: relative;
+       display: block;
+       transform: scale(var(--ggs,1));
+       width: 20px;
+       height: 14px;
+       border: 2px solid transparent
+      }
+
+      .gg-details-less::after,
+      .gg-details-less::before {
+       content: "";
+       display: block;
+       box-sizing: border-box;
+       position: absolute;
+       height: 2px;
+       border-radius: 3px;
+       background: currentColor
+      }
+
+      .gg-details-less::before {
+       top: 2px;
+       width: 16px
+      }
+
+      .gg-details-less::after {
+       width: 10px;
+       bottom: 2px
+      } 
+
+      .search-container {
+        display: flex;
+        align-items: center;
+        margin-left: auto;
+        position: relative;
+      }
+
+      #searchInput {
+        margin-right: 10px;
+        padding: 5px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        display: none;
+      }
+
+      #searchButton {
+        padding: 5px 10px;
+        background-color: #4caf50;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+
+      .container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+      }
+
+      .container-inside {
+        margin-top: 40px;
+        margin-left: 10px;
+        width: calc(20% - 10px);
+        height: auto;
+        border: 1px solid black;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        padding: 10px;
+        cursor: pointer;
+      }
+
+      .container-inside img {
+        max-width: 100%;
+        height: auto;
+      }
+
+      .container-inside h3 {
+        font-size: 16px;
+        margin-top: 10px;
+      }
+
+      .pagination {
+        clear: both;
+        display: table;
+        margin: 0 auto;
+      }
+
+      .pagination ul {
+        display: flex;
+        list-style: none;
+        overflow: hidden;
+        padding: 2em 0 0;
+      }
+
+      .pagination ul li a {
+        display: block;
+        text-decoration: none;
+        padding: 0.5em 1em;
+        margin-bottom: 0.5em;
+        border-width: 1px;
+        border-style: solid;
+        border-color: #eee;
+        outline: 0;
+        color: #bc0e0d;
+      }
+
+      #pagination-category {
+        display: flex;
+        flex-direction: column;
+      }
+
+      #pagination-category li {
+        
+      }
+      @media (max-width: 767px) {
+        .container-inside {
+          width: 100%;
+          margin-left: 20px;
+          margin-right: 20px;
+        }
+        #searchInput {
+          width: 120px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <h1>PINAY FLIX</h1>
+      <div class="search-container">
+        <input type="text" id="searchInput" placeholder="" />
+
+         <i class="gg-details-less" id="searchIcon"></i>
+        
+        <ul id="pagination-category"">
+          <li><a href="https://pinayflix.me/page/2/" class="inactive">Latest</a></li>
+          <li><a href="https://pinayflix.me/page/3/" class="inactive">Most viewed</a></li>
+          <li><a href="https://pinayflix.me/page/4/" class="inactive">Longest</a></li>
+          <li><a href="https://pinayflix.me/page/5/" class="inactive">Popular</a></li>
+          <li><a href="https://pinayflix.me/page/2/">Random</a></li>
+        </ul>
+        <!--- <button id="searchButton" onclick="">Search</button> -->
+      </div>
+    </nav>
+
+    <div class="pagination">
+      <ul>
+        <li><a class="current">1</a></li>
+        <li><a href="https://pinayflix.me/page/2/" class="inactive">2</a></li>
+        <li><a href="https://pinayflix.me/page/3/" class="inactive">3</a></li>
+        <li><a href="https://pinayflix.me/page/4/" class="inactive">4</a></li>
+        <li><a href="https://pinayflix.me/page/5/" class="inactive">5</a></li>
+        <li><a href="https://pinayflix.me/page/2/">Next</a></li>
+        <li><a href="https://pinayflix.me/page/114/">Last</a></li>
+      </ul>
+    </div>
+    <div class="container" id="video-container"></div>
+
+    <script>
+      const searchIcon = document.getElementById("searchIcon");
+      const searchInput = document.getElementById("searchInput");
+
+      searchIcon.addEventListener("click", function () {
+        if (searchInput.style.display === "block") {
+          searchInput.style.display = "none";
+        } else {
+          searchInput.style.display = "block";
+        }
+      });
+
+      async function home() {
+        const container = document.getElementById("video-container");
+        const loader = document.createElement("div");
+
+        loader.classList.add("loader");
+        loader.style.position = "fixed";
+        loader.style.top = "50%";
+        loader.style.left = "50%";
+        loader.style.transform = "translate(-50%, -50%)";
+
+        container.appendChild(loader);
+
+        const response = await fetch("/home");
+        const data = await response.json();
+
+        container.removeChild(loader);
+
+        data.forEach((item) => {
+          const title = item.title;
+          const img = item.img;
+          const video = item.video;
+
+          const videoItem = document.createElement("div");
+          videoItem.classList.add("container-inside");
+
+          const titleElement = document.createElement("h3");
+          titleElement.textContent = title.replace(" | PinayFlix", "");
+
+          const imgElement = document.createElement("img");
+          imgElement.src = img;
+          imgElement.alt = title;
+          imgElement.style.width = "125";
+          imgElement.style.height = "22px";
+
+          const loader = document.createElement("div");
+          loader.classList.add("loader");
+          videoItem.appendChild(loader);
+
+          imgElement.addEventListener("load", () => {
+            loader.style.display = "none";
+          });
+
+          videoItem.appendChild(imgElement);
+          videoItem.appendChild(titleElement);
+
+          imgElement.addEventListener("click", () => {
+            const videoElement = document.createElement("video");
+            videoElement.src = video;
+            videoElement.controls = true;
+            videoElement.autoplay = true;
+            videoElement.style.width = "100%";
+            videoElement.style.marginTop = "10px";
+            videoItem.innerHTML = "";
+            videoItem.appendChild(videoElement);
+          });
+
+          container.appendChild(videoItem);
+        });
+      }
+
+      home();
+    </script>
+  </body>
+</html>
