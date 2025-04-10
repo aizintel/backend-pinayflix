@@ -13,5 +13,6 @@
     "declaration": true                    // Generates .d.ts declaration files (optional)
   },
   "include": ["src/**/*"],                 // Include all files in the src folder
-  "exclude": ["node_modules"]              // Exclude node_modules folder
+  "exclude": ["node_modules", "utils"]
+
 }
