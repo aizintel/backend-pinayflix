@@ -28,6 +28,10 @@ app.use('/api/random', randomRoutes);
 app.use('/api/search', searchRoutes);
 
 
+app.get('/', (req, res) =>{
+  res.send("Server is running");
+});
+
 app.listen(PORT, () => {
   console.log('Server is running on port 3000');
 });
