@@ -1,6 +1,6 @@
 
 import express from 'express';
-import { search, pages } from '../controllers/latest.controller.js';
+import { search, pages } from '../controllers/latest.controller';
 
 const router = express.Router();
 
