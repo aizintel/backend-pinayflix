@@ -3,7 +3,7 @@ import { pages, search } from '../controllers/home.controller';
 
 const router = express.Router();
 
-router.get('/pages', pages);  // Endpoint to get page data
-router.get('/search', search); // Endpoint to search
+router.get('/pages', pages);
+router.get('/search', search);
 
 export default router;
