@@ -4,7 +4,7 @@ import { pages } from '../controllers/mostPopular.controller';
 
 const router = express.Router();
 
-router.post('/pages', pages);
+router.post('/', pages);
 
 
 export default router;

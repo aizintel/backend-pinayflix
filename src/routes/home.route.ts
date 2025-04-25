@@ -3,6 +3,6 @@ import { pages } from '../controllers/home.controller';
 
 const router = express.Router();
 
-router.post('/pages', pages);
+router.post('/', pages);
 
 export default router;

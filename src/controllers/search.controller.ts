@@ -8,6 +8,8 @@ interface PageData {
   img: string;
   link: string;
   video: string;
+  date: string;
+  author: string;
   }[],
   totalPages: string
 }
@@ -48,9 +50,11 @@ export const latest = async (req: Request, res: Response): Promise<void> => {
             const title = links('title').text().trim() || '';
             const img = links('meta[property="og:image"]').attr('content') || '';
             const embedURL = links('meta[itemprop="contentURL"]').attr('content') || '';
+            const date = links('#video-date').text().trim() || '';
+            const author = links('#video-author').text().trim() || ''; 
 
             if ((img && embedURL) || img || embedURL) {
-              pageData.data.push({ title, img, link: val, video: embedURL });
+              pageData.data.push({ title, img, link: val, video: embedURL, date, author});
             }
           }).catch((error) => {
             console.error('Error fetching page:', val, error);
@@ -70,7 +74,7 @@ export const latest = async (req: Request, res: Response): Promise<void> => {
 
 export const random = async (req: Request, res: Response): Promise<void> => {
   try {
-    const query = req.query.q as string;
+    const query = req.body.q as string;
     
     if (!query) {
       res.status(400).json({ error: 'Missing required query parameter: q' });
@@ -100,9 +104,11 @@ export const random = async (req: Request, res: Response): Promise<void> => {
             const title = links('title').text().trim() || '';
             const img = links('meta[property="og:image"]').attr('content') || '';
             const embedURL = links('meta[itemprop="contentURL"]').attr('content') || '';
+            const date = links('#video-date').text().trim() || '';
+            const author = links('#video-author').text().trim() || ''; 
 
             if ((img && embedURL) || img || embedURL) {
-              pageData.data.push({ title, img, link: val, video: embedURL });
+              pageData.data.push({ title, img, link: val, video: embedURL, date, author });
             }
           }).catch((error) => {
             console.error('Error fetching page:', val, error);

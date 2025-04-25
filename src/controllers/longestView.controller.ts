@@ -8,6 +8,8 @@ interface PageData {
   img: string;
   link: string;
   video: string;
+  date: string;
+  author: string;
   }[],
   totalPages: string
 }
@@ -41,9 +43,12 @@ export const pages = async (req: Request, res: Response): Promise<void> => {
             const title = $page('title').text().trim();
             const img = $page('meta[property="og:image"]').attr('content') || '';
             const video = $page('meta[itemprop="contentURL"]').attr('content') || '';
+            const date = $page('#video-date').text().trim() || '';
+            const author = $page('#video-author').text().trim() || ''; 
+            
 
             if (img) {
-              pageData.data.push({ title, img, link: val, video });
+              pageData.data.push({ title, img, link: val, video, date, author });
             }
           }).catch(err => {
             console.error(`Failed to fetch page ${val}:`, err.message);
