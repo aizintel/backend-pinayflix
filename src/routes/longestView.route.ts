@@ -4,7 +4,7 @@ import { pages } from '../controllers/longestView.controller';
 
 const router = express.Router();
 
-router.get('/pages', pages);
+router.post('/pages', pages);
 
 
 export default router;

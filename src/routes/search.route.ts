@@ -3,7 +3,7 @@ import { latest, random } from '../controllers/search.controller';
 
 const router = express.Router();
 
-router.get('/latest', latest);
-router.get('/random', random);
+router.post('/latest', latest);
+router.post('/random', random);
 
 export default router;

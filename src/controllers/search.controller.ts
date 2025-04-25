@@ -15,8 +15,8 @@ interface PageData {
 
 export const latest = async (req: Request, res: Response): Promise<void> => {
   try {
-    const query = req.query.q as string;
-  
+    
+    const query = req.body.q as string;
 
     if (!query) {
       res.status(400).json({ error: 'Missing required query parameter: q' });
@@ -78,7 +78,6 @@ export const random = async (req: Request, res: Response): Promise<void> => {
     }
 
     const searchUrl = `https://pinayflix.me/?s=${query}&filter=random`;
-    console.log(searchUrl);
 
     const axiosResponse = await axios.get(searchUrl);
     const $ = cheerio.load(axiosResponse.data);

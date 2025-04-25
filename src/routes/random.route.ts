@@ -4,7 +4,7 @@ import { pages } from '../controllers/random.controller';
 
 const router = express.Router();
 
-router.get('/pages', pages);
+router.post('/pages', pages);
 
 
 export default router;

@@ -15,7 +15,7 @@ interface PageData {
 
 export const pages = async (req: Request, res: Response): Promise<void> => {
   try {
-    const page = req.query.page ? parseInt(req.query.page as string, 10) : 1;
+    const page = req.body.page ? parseInt(req.body.page as string, 10) : 1;
     const url = `https://pinayflix.me/page/${page}/?filter=most-viewed`;
 
     const axiosResponse = await axios.get(url);
